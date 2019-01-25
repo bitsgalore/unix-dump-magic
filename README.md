@@ -40,23 +40,11 @@ Translating to hex strings:
 
 ## Test files
 
-Directory [files](./files/) contains minimal sample files for each of the aforementioned varieties, hand-crafted according to the *file* magic patterns. To double-check their accuracy, run *file* from this directory:
+Directory [files](./files/) contains minimal sample files for each of the aforementioned varieties, hand-crafted according to the *file* magic patterns. Note that these files *only* contain the magic patterns and some leading null-bytes, they are not full (let alone valid) dump files!
 
-    file *
+## Tika mimetype definitions
 
-This results in:
-
-    test-unix-dump-new-be:  new-fs dump file (big endian),  Previous dump Thu Jan  1 00:00:00 1970, This dump Thu Jan  1 00:00:00 1970,
-    test-unix-dump-new-le:  new-fs dump file (little endian),  Previous dump Thu Jan  1 00:00:00 1970, This dump Thu Jan  1 00:00:00 1970,
-    test-unix-dump-old-be:  old-fs dump file (big endian), 
-    test-unix-dump-old-le:  old-fs dump file (little endian), 
-    test-unix-dump-old-pdp: old-fs dump file (16-bit, assuming PDP-11 endianness), Previous dump Thu Jan  1 00:00:00 1970, This dump Thu Jan  1 00:00:00 1970,
-    test-unix-dump-ufs2-be: new-fs dump file (ufs2, big endian),  Previous dump Thu Jan  1 00:00:00 1970, This dump Thu Jan  1 00:00:00 1970,
-    test-unix-dump-ufs2-le: new-fs dump file (ufs2, little endian),  Previous dump Thu Jan  1 00:00:00 1970, This dump Thu Jan  1 00:00:00 1970,
-
-Which confirms these files match their respective magic patterns.
-
-## Tika mimetype definition
+Below is a set of mimetype definitions for Apache Tika, derived from the file(1) entries (submitted to Tika, [pull request pending](https://github.com/apache/tika/pull/266)):
 
 ```xml
 <mime-type type="application/x-tika-unix-dump">
@@ -99,7 +87,6 @@ all) -->
   </magic>
 </mime-type>
 ```
-(Submitted to Tika, [pull request pending](https://github.com/apache/tika/pull/266).)
 
 ## Resources
 

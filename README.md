@@ -38,10 +38,6 @@ Translating to hex strings:
 |24&emsp;lelong&emsp;0x19540119&emsp;new-fs dump file (ufs2, little endian)|19 01 54 19|
 |18&emsp;leshort&emsp;60011&emsp;old-fs dump file (16-bit, assuming PDP-11 endianness)|6B EA|
 
-## Test files
-
-Directory [files](./files/) contains minimal sample files for each of the aforementioned varieties, hand-crafted according to the *file* magic patterns. Note that these files *only* contain the magic patterns and some leading null-bytes, they are not full (let alone valid) dump files!
-
 ## Tika mimetype definitions
 
 Below is a set of mimetype definitions for Apache Tika, derived from the file(1) entries (submitted to Tika, [pull request pending](https://github.com/apache/tika/pull/266)):
@@ -87,6 +83,9 @@ all) -->
   </magic>
 </mime-type>
 ```
+## Test files
+
+Directory [files](./files/) contains minimal sample files for each of the aforementioned varieties, hand-crafted according to the *file* magic patterns. Note that these files *only* contain the magic patterns and some leading null-bytes, they are not full (let alone valid) dump files!
 
 ## Resources
 
